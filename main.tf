@@ -56,6 +56,14 @@ resource "aws_amplify_app" "default" {
     }
   }
 
+  dynamic "job_config" {
+    for_each = var.job_config != null ? [true] : []
+
+    content {
+      build_compute_type = lookup(var.job_config, "build_compute_type", null)
+    }
+  }
+
   tags = module.this.tags
 }
 

@@ -195,3 +195,11 @@ variable "attach_amplify_admin_managed_policy" {
   default     = false
   nullable    = false
 }
+
+variable "job_config" {
+  type = object({
+    build_compute_type = optional(string)
+  })
+  description = "The job configuration for the Amplify app. Allows configuration of build compute type. Valid values: STANDARD_8GB, LARGE_16GB, and XLARGE_72GB. Default without explicit setting is STANDARD."
+  default     = null
+}

@@ -27,6 +27,7 @@ module "amplify_app" {
   environments                        = var.environments
   domains                             = var.domains
   attach_amplify_admin_managed_policy = var.attach_amplify_admin_managed_policy
+  job_config                          = var.job_config
 
   context = module.this.context
 }
