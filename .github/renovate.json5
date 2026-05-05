@@ -1,13 +1,17 @@
 {
   "extends": [
-    "config:base",
+    "config:best-practices",
     ":preserveSemverRanges",
     ":rebaseStalePrs"
   ],
   "baseBranches": ["main"],
   "labels": ["auto-update"],
   "dependencyDashboardAutoclose": true,
-  "enabledManagers": ["terraform"],
+  "minimumReleaseAge": "3 days",
+  "enabledManagers": [
+    "terraform",
+    "github-actions"
+  ],
   "terraform": {
     "ignorePaths": ["**/context.tf"]
   }
